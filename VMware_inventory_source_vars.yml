@@ -1,0 +1,283 @@
+plugin: community.vmware.vmware_vm_inventory
+hostnames:
+  - config.name
+compose:
+  ansible_host: config.name | regex_replace(' - .*', '')
+properties:
+  - name
+  - parent
+  - parentVApp
+  - permission
+  - recentTask
+  - resourcePool
+  - rootSnapshot
+  - snapshot
+  - triggeredAlarmState
+  - overallStatus
+  - guest
+  - guestHeartbeatStatus
+  - network
+  - value
+  - capability
+  - runtime
+  - availableField
+  - customValue
+  - datastore
+  - effectiveRole
+  - layout
+  - layoutEx
+  - storage
+  - configIssue
+  - configStatus
+  - config
+  - summary
+with_nested_properties: true
+with tags: true
+with_path: true
+groups:
+  linux_no_legacy_hosts: >-
+    name is not search('s069') and
+    name is not search('ca1svad2') and
+    name is not search('al1svad1') and
+    name is not search('al1svad2') and
+    name is not search('ca1svad1') and
+    name is not search('CO1SV001') and
+    name is not search('challenger') and
+    name is not search('co1svad1') and
+    name is not search('co1svad2') and
+    name is not search('gr1svad2') and
+    name is not search('gr1svad1') and
+    name is not search('discovery-ntp') and
+    name is not search('hu1svad1') and
+    name is not search('hu1svad2') and
+    name is not search('ja1svad1') and
+    name is not search('cica-vcsa') and
+    name is not search('ja1svad2') and
+    name is not search('dns') and
+    name is not search('k0') and
+    name is not search('ja1svad1') and
+    name is not search('ma1svad1') and
+    name is not search('ma1svad2') and
+    name is not search('naemon-al') and
+    name is not search('ldap2') and
+    name is not search('naemon-ca') and
+    name is not search('naemon-ma') and
+    name is not search('naemoncenter') and
+    name is not search('naemon-co') and
+    name is not search('naemon-gr') and
+    name is not search('naemon-hu') and
+    name is not search('naemon-ja') and
+    name is not search('naemon-se') and
+    name is not search('portalcga-pro') and
+    name is not search('portalcga-pre') and
+    name is not search('sc1svdc1') and
+    name is not search('sc1svdc2') and
+    name is not search('se1sv002 - g800quorum') and
+    name is not search('se1sv004 - m8quorumpre') and
+    name is not search('se1sv003 - m8quorumpro') and
+    name is not search('se1svad1') and
+    name is not search('se1svad2') and
+    name is not search('sigila') and
+    name is not search('sigiladb') and
+    name is not search('sigila-ext') and
+    name is not search('sscc-vcsa') and
+    name is not search('soyuz') and
+    name is not search('sv0013 - epo1') and
+    name is not search('sv0001 - dhcp') and
+    name is not search('sv0023 - educaweb1') and
+    name is not search('sv0024 - smartpatch') and
+    name is not search('sv0022 - hiprobe') and
+    name is not search('sv0035 - helix') and
+    name is not search('sv0036 - rnpowerbi1') and
+    name is not search('sv0039 - portalweb1pre-adm') and
+    name is not search('sv0043 - sql1') and
+    name is not search('sv0045 - php1') and
+    name is not search('sv0046 - php2') and
+    name is not search('sv0047 - php3') and
+    name is not search('sv0054 - ws') and
+    name is not search('sv0061 - dnsext1') and
+    name is not search('sv0089 - forms5') and
+    name is not search('sv0105 - puppet1') and
+    name is not search('sv0109 - educaweb1pre2012') and
+    name is not search('sv0117 - spool64') and
+    name is not search('sv0126 - solutia') and
+    name is not search('sv0129 - fachadafirma1') and
+    name is not search('sv0130 - fachadafirma2') and
+    name is not search('sv0136 - licencias') and
+    name is not search('sv0135 - avsensor1') and
+    name is not search('sv0137 - cloudcontrol1') and
+    name is not search('sv0149 - inspectio1') and
+    name is not search('sv0150 - cosmos1') and
+    name is not search('sv0158 - entidades1') and
+    name is not search('sv0166 - cmdb1') and
+    name is not search('sv0164 - centronotificaciones3') and
+    name is not search('sv0167 - cca1') and
+    name is not search('sv0174 - viom') and
+    name is not search('sv0198 - dfs1') and
+    name is not search('sv0200 - observer1') and
+    name is not search('sv0204 - liferay1') and
+    name is not search('sv0205 - liferay2') and
+    name is not search('sv0209 - alfrescoweb2') and
+    name is not search('sv0220 - wsus') and
+    name is not search('sv0231 - firma1') and
+    name is not search('sv0232 - firma2') and
+    name is not search('sv0233 - alfrescoweb1') and
+    name is not search('sv0235 - cauce1') and
+    name is not search('sv0237 - despliegue1') and
+    name is not search('sv0266 - ocsced1') and
+    name is not search('sv0282 - openedx1') and
+    name is not search('sv0290 - cosmos2') and
+    name is not search('sv0294 - formswl5') and
+    name is not search('sv0296 - compilador1') and
+    name is not search('sv0298 - formswl4') and
+    name is not search('sv0367 - reporttribunales3') and
+    name is not search('sv0387 - alfrescoweb4') and
+    name is not search('sv0388 - alfrescoweb5') and
+    name is not search('sv0389 - alfrescoweb6') and
+    name is not search('sv0390 - alfrescoweb7') and
+    name is not search('sv0401 - educaweb1temp') and
+    name is not search('sv0402 - educaweb2temp') and
+    name is not search('sv0403 - educaweb3temp') and
+    name is not search('sv0404 - educaweb4temp') and
+    name is not search('sv0405 - educaweb5temp') and
+    name is not search('sv0408 - educaweb6temp') and
+    name is not search('sv0409 - educaweb7temp') and
+    name is not search('sv0410 - educaweb8temp') and
+    name is not search('sv0411 - educaweb9temp') and
+    name is not search('sv0412 - educaweb10temp') and
+    name is not search('sv0413 - educaweb11temp') and
+    name is not search('sv0438 - alfrescoweb3') and
+    name is not search('sv0439 - unoconv1') and
+    name is not search('sv0440 - unoconv2') and
+    name is not search('sv0457 - educaweb2') and
+    name is not search('sv0458 - educaweb3') and
+    name is not search('sv0529 - instdep1') and
+    name is not search('sv0530 - instdep2') and
+    name is not search('sv0532 - cas2') and
+    name is not search('sv0591 - cas3') and
+    name is not search('vcsa-Witness') and
+    name is not search('se1sv003 - m8quorumpro') and
+    name is not search('sv0002 - mantenimiento1') and
+    name is not search('s070 - reports2') and
+    name is not search('s113 - forms1') and
+    name is not search('s114 - forms2') and
+    name is not search('s115 - forms3') and
+    name is not search('s116 - forms4') and
+    name is not search('cica-vcsa') and
+    name is not search('sscc-vcsa') and
+    name is not search('k8slab-git') and
+    name is not search('k8slab-hnas') and
+    name is not search('k8slab-master1') and
+    name is not search('k8slab-master2') and
+    name is not search('k8slab-master3') and
+    name is not search('k8slab-node1') and
+    name is not search('k8slab-node2') and
+    name is not search('k8slab-proxy') and
+    name is not search('k8slab-registry') and
+    name is not search('rene') and
+    name is not search('se1sv002 - g800quorum') and
+    name is not search('se1sv003 - m8quorumpro') and
+    name is not search('se1sv004 - m8quorumpre') and
+    name is not search('sv0135 - avsensor1') and
+    name is not search('sv0161- blogaverroes') and
+    name is not search('sv0266 - ocsced1') and
+    name is not search('sv0395 - panorama') and
+    name is not search('sv0502 - nbuopscenter') and
+    name is not search('sv0503 - nbumaster01') and
+    name is not search('sv0504 - nbumaster02') and
+    name is not search('zocodda')
+  linux_python_legacy_hosts: >-
+    name is search('s070 - reports2') or
+    name is search('s113 - forms1') or
+    name is search('s114 - forms2') or
+    name is search('s115 - forms3') or
+    name is search('s116 - forms4') or
+    name is search('sv0054 - ws') or
+    name is search('sv0129 - fachadafirma1') or
+    name is search('sv0130 - fachadafirma2') or
+    name is search('sv0231 - firma1') or
+    name is search('sv0232 - firma2') or
+    name is search('sv0235 - cauce1')
+  linux_ssh_legacy_hosts: >-
+    name is search('challenger') or
+    name is search('discovery-ntp') or
+    name is search('dns') or
+    name is search('k0') or
+    name is search('naemon-al') or
+    name is search('ldap2') or
+    name is search('naemon-ca') or
+    name is search('naemon-ma') or
+    name is search('naemoncenter') or
+    name is search('naemon-co') or
+    name is search('naemon-gr') or
+    name is search('naemon-hu') or
+    name is search('naemon-ja') or
+    name is search('naemon-se') or
+    name is search('portalcga-pro') or
+    name is search('portalcga-pre') or
+    name is search('sigila') or
+    name is search('sigiladb') or
+    name is search('sigila-ext') or
+    name is search('soyuz') or
+    name is search('sv0002 - mantenimiento1') or
+    name is search('sv0022 - hiprobe') or
+    name is search('sv0039 - portalweb1pre-adm') or
+    name is search('sv0045 - php1') or
+    name is search('sv0046 - php2') or
+    name is search('sv0047 - php3') or
+    name is search('Sv0089 - forms5') or
+    name is search('sv0105 - puppet1') or
+    name is search('sv0135 - avsensor1') or
+    name is search('sv0137 - cloudcontrol1') or
+    name is search('sv0149 - inspectio1') or
+    name is search('sv0150 - cosmos1') or
+    name is search('sv0158 - entidades1') or
+    name is search('sv0164 - centronotificaciones3') or
+    name is search('sv0174 - viom') or
+    name is search('sv0200 - observer1') or
+    name is search('sv0204 - liferay1') or
+    name is search('sv0205 - liferay2') or
+    name is search('sv0209 - alfrescoweb2') or
+    name is search('sv0233 - alfrescoweb1') or
+    name is search('sv0237 - despliegue1') or
+    name is search('sv0266 - ocsced1') or
+    name is search('sv0282 - openedx1') or
+    name is search('sv0290 - cosmos2') or
+    name is search('sv0294 - formswl5') or
+    name is search('sv0298 - formswl4') or
+    name is search('sv0367 - reporttribunales3') or
+    name is search('sv0387 - alfrescoweb4') or
+    name is search('sv0388 - alfrescoweb5') or
+    name is search('sv0389 - alfrescoweb6') or
+    name is search('sv0390 - alfrescoweb7') or
+    name is search('sv0438 - alfrescoweb3') or
+    name is search('sv0439 - unoconv1') or
+    name is search('sv0440 - unoconv2') or
+    name is search('sv0532 - cas2') or
+    name is search('sv0591 - cas3')
+  out_of_scope_hosts: >-
+    name is search('cica-vcsa') or
+    name is search('sscc-vcsa') or
+    name is search('vcsa-Witness') or
+    name is search('k8slab-git') or
+    name is search('k8slab-hnas') or
+    name is search('k8slab-master1') or
+    name is search('k8slab-master2') or
+    name is search('k8slab-master3') or
+    name is search('k8slab-node1') or
+    name is search('k8slab-node2') or
+    name is search('k8slab-proxy') or
+    name is search('k8slab-registry') or
+    name is search('rene') or
+    name is search('se1sv002 - g800quorum') or
+    name is search('se1sv003 - m8quorumpro') or
+    name is search('se1sv004 - m8quorumpre') or
+    name is search('sv0135 - avsensor1') or
+    name is search('sv0161 - blogaverroes') or
+    name is search('sv0266 - ocsced1') or
+    name is search('sv0395 - panorama') or
+    name is search('sv0502 - nbuopscenter') or
+    name is search('sv0503 - nbumaster01') or
+    name is search('sv0504 - nbumaster02') or
+    name is search('zocodda')
+

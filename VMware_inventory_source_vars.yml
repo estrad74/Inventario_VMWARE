@@ -185,7 +185,8 @@ groups:
     name is not search('sv0502 - nbuopscenter') and
     name is not search('sv0503 - nbumaster01') and
     name is not search('sv0504 - nbumaster02') and
-    name is not search('zocodda')
+    name is not search('zocodda') and
+    name is not search('webdpal')
   linux_python_legacy_hosts: >-
     name is search('s070 - reports2') or
     name is search('s113 - forms1') or
@@ -197,7 +198,8 @@ groups:
     name is search('sv0130 - fachadafirma2') or
     name is search('sv0231 - firma1') or
     name is search('sv0232 - firma2') or
-    name is search('sv0235 - cauce1')
+    name is search('sv0235 - cauce1') or
+    name is search('webdpal')
   linux_ssh_legacy_hosts: >-
     name is search('challenger') or
     name is search('discovery-ntp') or

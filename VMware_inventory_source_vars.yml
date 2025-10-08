@@ -259,8 +259,6 @@ groups:
     name is search('sv0591 - cas3')
   out_of_scope_hosts: >-
     name is search('cica-vcsa') or
-    name is search('sscc-vcsa') or
-    name is search('vcsa-Witness') or
     name is search('k8slab-git') or
     name is search('k8slab-hnas') or
     name is search('k8slab-master1') or
@@ -271,15 +269,23 @@ groups:
     name is search('k8slab-proxy') or
     name is search('k8slab-registry') or
     name is search('rene') or
+    name is search('s038 - reports1pre') or
     name is search('se1sv002 - g800quorum') or
-    name is search('se1sv003 - m8quorumpro') or
+    name is search('se1sv003 – m8quorumpro') or
     name is search('se1sv004 - m8quorumpre') or
+    name is search('sscc-vcsa') or
+    name is search('sv0039 - portalweb1pre-adm') or
     name is search('sv0135 - avsensor1') or
-    name is search('sv0161 - blogaverroes') or
+    name is search('sv0161 - blogsaverroes1') or
     name is search('sv0266 - ocsced1') or
     name is search('sv0395 - panorama') or
     name is search('sv0502 - nbuopscenter') or
     name is search('sv0503 - nbumaster01') or
     name is search('sv0504 - nbumaster02') or
+    name is search('sv0511 - cedmon') or
+    name is search('sv0515') or
+    name is search('sv0599') or
+    name is search('sv0649') or 
+    name is search('sv0650') or
+    name is search('vcsa-Witness') or
     name is search('zocodda')
-

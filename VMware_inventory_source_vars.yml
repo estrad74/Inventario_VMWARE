@@ -32,7 +32,7 @@ properties:
   - config
   - summary
 filters:
-  summary.runtime.powerState: poweredOn
+  - summary.runtime.powerState == "poweredOn"
 with_nested_properties: true
 with tags: true
 with_path: true

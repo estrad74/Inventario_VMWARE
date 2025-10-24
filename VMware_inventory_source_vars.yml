@@ -31,6 +31,8 @@ properties:
   - configStatus
   - config
   - summary
+filters:
+  runtime.powerState: poweredOn
 with_nested_properties: true
 with tags: true
 with_path: true
